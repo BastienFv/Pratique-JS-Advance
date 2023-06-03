@@ -1,5 +1,6 @@
 # Pratique-JS-Advance
 
+
 # Cas pratique n°1
 
 Créez les éléments suivants en utilisant leur constructeurs :
@@ -9,6 +10,7 @@ Créez les éléments suivants en utilisant leur constructeurs :
 - Un objet littéral contenant votre nom, votre prénom et une fonction affichant
 « bonjour »
 - Une erreur dont le message est « What’s going on ? And I say heyyyyyy » et levez la
+
 
 # Cas pratique n°2
 
@@ -40,3 +42,27 @@ propriété), la voyez vous ?
 produisent le bon résultat.
 
 - Changer la propriété « role » d'un utilisateur en lui donnant la valeur « admin » puis affichez là dans la console. A-t-elle remplacé la propriété du prototype ?
+
+
+# Cas pratique n°3
+
+Créez un objet littéral produit et définissez les propriétés (ou accesseurs) selon
+contraintes suivantes :
+
+- id (ne peut pas être modifié ou supprimé)
+- nom
+- prix d’achat
+- prix de vente
+- marge (doit être calculée automatiquement, modifier la marge doit influer sur
+le prix de vente sans modifier le prix d’achat, ne doit pas être énumérable)
+- ref (ne peut pas être modifiée, supprimée et ne doit pas être énumérable)
+- description
+
+Créez maintenant un proxy pour l’objet produit apportant les fonctionnalités suivantes :
+
+- Tous les prix doivent être retournés avec le symbole €.
+- La description doit être retournée tronquée (suivi de "…") si elle fait plus de 100
+caractères.
+- Les prix d’achat et de vente doivent toujours être positifs.
+- On ne peut modifier un prix de vente pour le rendre inférieur au prix d’achat.
+- On ne peut modifier un prix d’achat pour le rendre supérieur au prix de vente.
