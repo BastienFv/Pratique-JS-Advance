@@ -11,9 +11,7 @@ console.log(array);
 const object = new Object();
 object.firstname = "John";
 object.lastname = "Doe";
-object.sayHello = function() {
-    return "Bonjour";
-};
+object.sayHello = new Function("return `Bonjour`");
 console.log(object);
 console.log(object.sayHello());
 

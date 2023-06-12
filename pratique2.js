@@ -1,31 +1,32 @@
+const crypto = require('crypto');
+
+/* Fonction constructeur */
 function User(lastname, firstname, email, nickname, age) {
-    this.lastname = lastname,
-    this.firstname = firstname,
-    this.email = email,
-    this.nickname = nickname,
-    this.age = age
+    this.lastname = String(lastname).trim();
+    this.firstname = String(firstname).trim();
+    this.email = String(email).trim();
+    this.nickname = String(nickname).trim();
+    this.age = Number(age);
 };
 
-const user1 = new User("Fauveau", "Bastien", "bf@test.com", "Le B", 32);
-const user2 = new User("Test", "Test", "test@test.com", "test", 17);
+/* Création de 2 objets */
+const user1 = new User("Doe", "John", "john@doe.com", "JD", 25);
+const user2 = new User("Doe", "Jane", "jane@doe.com", "J", 17);
 
+/* Modification du prototype */
 User.prototype.role = "visiteur";
-
-User.prototype.enableNSFW = function () {
+User.prototype.enableNSFW = function() {
     return this.age >= 18;
 };
 
-User.prototype.randomizeName = function () {
-    this.nickname = "azerty*";
-};
+User.prototype.randomizeName = function() {
+    return this.nickname + "-" + crypto.randomUUID();
+}
 
 console.log(user1);
-console.log(user2);
 console.log(user1.role);
-console.log(user1.enableNSFW());
-
-user1.randomizeName();
-console.log(user1);
+console.log(user1.randomizeName());
+console.log(user2.enableNSFW());
 
 user1.role = "admin";
 console.log(user1.role);
